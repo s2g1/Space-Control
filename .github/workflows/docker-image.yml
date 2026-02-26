@@ -13,5 +13,13 @@ jobs:
 
     steps:
     - uses: docker/build-push-action@master
-    - name: Build the Docker image and push it to a repository
-      
+    - name: Build and push the visualization 
+    with:
+      context: ./services/visualization
+      push: true
+
+    - uses: docker/build-push-action@master
+    - name: Build and push the control screen
+    with:
+      context: ./services/mobile\ control\ screen
+      push: true
