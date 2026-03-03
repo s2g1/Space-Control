@@ -17,9 +17,11 @@ jobs:
     with:
       context: ./services/visualization
       push: true
+      tags: ${{secrets.GCP_ARTIFACT_REGISTRY}}:latest
 
     - uses: docker/build-push-action@master
     - name: Build and push the control screen
     with:
       context: ./services/mobile\ control\ screen
       push: true
+      tags: ${{secrets.GCP_ARTIFACT_REGISTRY}}:latest
