@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v6
+
     - name: Build and push the visualization 
       uses: docker/build-push-action@master
       with:
