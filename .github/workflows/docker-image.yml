@@ -9,9 +9,21 @@ jobs:
   docker:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v6
+
+    - name: Authetication with Google cloud
+      uses: google-github-actions/auth@main
+      with:
+        project_id: ${{secrets.GCP_PROJECT_ID}}:latest
+        workload_identity_provider: #need to look this up
+
+    # Need another action to log into the registry
 
     - name: Build and push the visualization 
       uses: docker/build-push-action@master
