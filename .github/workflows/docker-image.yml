@@ -20,8 +20,8 @@ jobs:
     - name: Authetication with Google cloud
       uses: google-github-actions/auth@main
       with:
-        project_id: ${{secrets.GCP_PROJECT_ID}}:latest
-        workload_identity_provider: #need to look this up
+        service_account: ${{secrets.GCP_REGISTRY_SERVICE_ACCOUNT}}
+        workload_identity_provider: ${{secrets.GCP_OIDC_PARTIAL}}
 
     # Need another action to log into the registry
 
