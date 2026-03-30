@@ -21,7 +21,7 @@ jobs:
       uses: google-github-actions/auth@v2
       with:
         service_account: ${{secrets.GCP_REGISTRY_SERVICE_ACCOUNT}}
-        workload_identity_provider: ${{secrets.GCP_OIDC_PARTIAL}}
+        workload_identity_provider: ${{secrets.GCP_WORKLOAD_ID_PROVIDERKLOAD}}
 
     # Need another action to log into the registry
 
